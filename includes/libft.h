@@ -6,7 +6,7 @@
 /*   By: stigkas <stigkas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 15:57:48 by stigkas           #+#    #+#             */
-/*   Updated: 2023/12/18 09:46:51 by stigkas          ###   ########.fr       */
+/*   Updated: 2023/12/18 10:09:37 by stigkas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,11 +65,11 @@ void		ft_lstdelone(t_list *lst, void (*del)(void *));
 void		ft_lstclear(t_list **lst, void (*del)(void *));
 void		ft_lstiter(t_list *lst, void (*f)(void *));
 t_list		*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
-int         ft_printf(const char *format, ...);
-int         pr_format(char spec, va_list lst_args);
-int         print_hex(unsigned long n, char spec);
-int         print_u(unsigned int n);
-int         print_ptr(unsigned long ptr);
-int         h(int char_print, int w);
+int			ft_printf(const char *format, ...);
+int			pr_format(char spec, va_list lst_args);
+int			print_hex(unsigned long n, char spec);
+int			print_u(unsigned int n);
+int			print_ptr(unsigned long ptr);
+int			h(int char_print, int w);
 
 #endif
