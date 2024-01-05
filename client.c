@@ -6,33 +6,52 @@
 /*   By: stigkas <stigkas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/18 10:15:01 by stigkas           #+#    #+#             */
-/*   Updated: 2023/12/18 13:53:26 by stigkas          ###   ########.fr       */
+/*   Updated: 2024/01/05 18:01:09 by stigkas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "includes/minitalk.h"
+#include <stdio.h>
+
+void	send_bit(int server_pid, int bit)
+{
+	if (bit == 1)
+		kill(server_pid, SIGUSR1);
+	else
+		kill(server_pid, SIGUSR2);
+	usleep(42);
+}
+
+void	send_char(int server_pid, char character)
+{
+	int	i;
+	int	bit;
+
+	i = 8;
+	while (i > 0)
+	{
+		bit = (character >> i) & 1;
+		send_bit(server_pid, bit);
+		--i;
+	}
+}
 
 int	main(int argc, char *argv[])
 {
 	pid_t	server_pid;
-	char	*str_send;
 	int		i;
 
 	i = 0;
 	if (argc == 3)
 	{
 		server_pid = ft_atoi(argv[1]);
-		str_send = argv[2];
-		kill(server_pid, SIGUSR1);
-		sleep(1);
-		while (str_send[i] != '\0')
+		while (argv[2][i] != '\0')
 		{
-			if (str_send[i] == '1')
-				kill(server_pid, SIGUSR2);
-			else
-				kill(server_pid, SIGUSR1);
-			usleep(50000);
+			send_char(server_pid, argv[2][i]);
+			++i;
 		}
 	}
+	else
+		exit(1);
 	return (0);
 }
