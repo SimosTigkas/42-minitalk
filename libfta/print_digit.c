@@ -6,15 +6,15 @@
 /*   By: stigkas <stigkas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 08:27:56 by stigkas           #+#    #+#             */
-/*   Updated: 2023/11/20 15:52:53 by stigkas          ###   ########.fr       */
+/*   Updated: 2024/01/08 12:46:23 by stigkas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../includes/libft.h"
 
 int	print_u(unsigned int n)
 {
-	int		c;
+	int	c;
 
 	c = 0;
 	if (n >= 10)
