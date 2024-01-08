@@ -6,12 +6,11 @@
 /*   By: stigkas <stigkas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/18 10:15:01 by stigkas           #+#    #+#             */
-/*   Updated: 2024/01/05 18:01:09 by stigkas          ###   ########.fr       */
+/*   Updated: 2024/01/08 09:43:13 by stigkas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "includes/minitalk.h"
-#include <stdio.h>
 
 void	send_bit(int server_pid, int bit)
 {
@@ -27,8 +26,8 @@ void	send_char(int server_pid, char character)
 	int	i;
 	int	bit;
 
-	i = 8;
-	while (i > 0)
+	i = 7;
+	while (i >= 0)
 	{
 		bit = (character >> i) & 1;
 		send_bit(server_pid, bit);

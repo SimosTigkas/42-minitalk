@@ -6,56 +6,50 @@
 /*   By: stigkas <stigkas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/18 10:15:05 by stigkas           #+#    #+#             */
-/*   Updated: 2024/01/05 16:26:24 by stigkas          ###   ########.fr       */
+/*   Updated: 2024/01/08 12:57:12 by stigkas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "includes/minitalk.h"
 #include <stdio.h>
 
+void	handle_signal(int bit)
+{
+	static int	bit_index = 0;
+	static char	current_char = 0;
+
+	current_char |= (bit << bit_index);
+	if (++bit_index == 8)
+	{
+		ft_printf("The current character is: %c", current_char);
+		bit_index = 0;
+		current_char = 0;
+	}
+}
+
 void	sigusr1_handler(int sig)
 {
 	if (sig == SIGUSR1)
-	{
-		ft_strcpy(g_sstr, g_cstr);
-		printf("Received SIGUSR1\n");
-		printf("Received string: %s\n", g_sstr);
-	}
+		handle_signal(1);
 }
 
 void	sigusr2_handler(int sig)
 {
 	if (sig == SIGUSR2)
-	{
-		ft_strcpy(g_sstr, g_cstr);
-		printf("Received the SIGUSR2 signal!!\n");
-		printf("Received string: %s\n", g_sstr);
-	}
+		handle_signal(0);
 }
 
 int	main(void)
 {
-	int		c;
-	pid_t	server_pid;
-	// pid_t	client_pid;
+	pid_t		server_pid;
+	static int	bit_index = 0;
+	static char	current_char = 0;
 
 	server_pid = getpid();
-	c = 0;
-	ft_memset(g_sstr, 0, sizeof(g_sstr));
-	printf("Server PID: %d\n", server_pid);
+	ft_printf("Server PID: %d\n", server_pid);
 	signal(SIGUSR1, sigusr1_handler);
-	// signal(SIGUSR2, sigusr2_handler);
-	kill(server_pid, SIGUSR1);
-	if (kill(server_pid, SIGUSR1) == -1)
-		exit(1);
-	sleep(1);
-	// kill(client_pid, SIGUSR1);
-	// if (kill(client_pid, SIGUSR1) == -1)
-	// 	exit(1);
-	while (c < 1)
-	{
+	signal(SIGUSR2, sigusr2_handler);
+	while (1)
 		pause();
-		c++;
-	}
 	return (0);
 }

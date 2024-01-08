@@ -6,7 +6,7 @@
 /*   By: stigkas <stigkas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/18 10:32:04 by stigkas           #+#    #+#             */
-/*   Updated: 2024/01/05 17:41:27 by stigkas          ###   ########.fr       */
+/*   Updated: 2024/01/08 12:31:24 by stigkas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,5 +28,6 @@
 
 void	sigusr1_handler(int sig);
 void	sigusr2_handler(int sig);
+void	handle_signal(int bit);
 
 #endif
