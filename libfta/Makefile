@@ -34,7 +34,10 @@ FUNC = \
 	ft_strtrim.c \
 	ft_substr.c \
 	ft_tolower.c \
-	ft_toupper.c 
+	ft_toupper.c \
+	print_digit.c \
+	print_format.c \
+	ft_printf.c
 
 BONUS = \
 	ft_lstnew_bonus.c \
