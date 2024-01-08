@@ -6,11 +6,12 @@
 /*   By: stigkas <stigkas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/18 10:15:01 by stigkas           #+#    #+#             */
-/*   Updated: 2024/01/08 09:43:13 by stigkas          ###   ########.fr       */
+/*   Updated: 2024/01/08 13:20:07 by stigkas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "includes/minitalk.h"
+
 
 void	send_bit(int server_pid, int bit)
 {

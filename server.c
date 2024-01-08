@@ -6,12 +6,11 @@
 /*   By: stigkas <stigkas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/18 10:15:05 by stigkas           #+#    #+#             */
-/*   Updated: 2024/01/08 12:57:12 by stigkas          ###   ########.fr       */
+/*   Updated: 2024/01/08 13:19:27 by stigkas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "includes/minitalk.h"
-#include <stdio.h>
 
 void	handle_signal(int bit)
 {
