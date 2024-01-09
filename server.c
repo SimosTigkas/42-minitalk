@@ -6,7 +6,7 @@
 /*   By: stigkas <stigkas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/18 10:15:05 by stigkas           #+#    #+#             */
-/*   Updated: 2024/01/08 16:31:21 by stigkas          ###   ########.fr       */
+/*   Updated: 2024/01/09 13:16:02 by stigkas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,19 @@
 
 void	handle_signal(int bit)
 {
-	static int	bit_index;
-	static char	current_char;
-
-	current_char = 0;
+	static int				bit_index;
+	static unsigned char	current_char;
 
 	current_char |= (bit << bit_index);
+	if (bit)
+		current_char = current_char | bit;
 	++bit_index;
 	if (bit_index == 8)
 	{
 		ft_printf("The current character is: %c\n", current_char);
 		bit_index = 0;
+		current_char = 0;
 	}
-	else
-		current_char <<= 1;
 }
 
 void	sigusr1_handler(int sig)
@@ -50,13 +49,12 @@ void	sigusr2_handler(int sig)
 
 int	main(void)
 {
-	pid_t		server_pid;
-
-	server_pid = getpid();
-	ft_printf("Server PID: %d\n", server_pid);
-	signal(SIGUSR1, sigusr1_handler);
-	signal(SIGUSR2, sigusr2_handler);
+	ft_printf("Server PID: %d\n", getpid());
 	while (1)
+	{
+		signal(SIGUSR1, sigusr1_handler);
+		signal(SIGUSR2, sigusr2_handler);
 		pause();
+	}
 	return (0);
 }
