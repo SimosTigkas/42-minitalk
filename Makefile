@@ -1,4 +1,4 @@
-NAME=minitalk.a
+NAME=minitalk
 
 FUNC = \
 		client.c \
