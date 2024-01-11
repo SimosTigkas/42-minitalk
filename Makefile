@@ -17,14 +17,18 @@ CFLAGS = -Wall -Wextra -Werror
 $(NAME): $(OBJ)
 	ar crs $(NAME) $(OBJ)
 
-all: $(NAME) server client
-
-server:
+libft:
 	cd libfta && $(MAKE)
-	$(CC) $(CFLAGS) -I $(INC) server.c $(LIBFT) -o server
 
-client: 
-	$(CC) $(CFLAGS) -I $(INC) client.c $(LIBFT) -o client
+server: libft
+	@echo "Compiling the server"
+	$(CC) $(CFLAGS) -I $(INC) server.o $(LIBFT) -o server
+
+client: libft
+	@echo "Compiling the client"
+	$(CC) $(CFLAGS) -I $(INC) client.o $(LIBFT) -o client
+
+all: $(NAME) server client
 
 clean:
 	rm -f $(OBJ) server client
@@ -35,7 +39,5 @@ fclean:	clean
 	cd libfta && $(MAKE) fclean
 
 re:	fclean all
-	cd libfta && $(MAKE) fclean
-	cd libfta && $(MAKE) all
 
-.PHONY: all clean fclean server client
+.PHONY: all clean fclean re server client
