@@ -13,5 +13,5 @@ This project demonstrates a basic client-server communication system using UNIX 
 Compile the client and server using the following commands:
 
 ```bash
-gcc client.c -o client
-gcc server.c -o server
+gcc -Wall -Wextra -Werror client.c libfta/libft.a -o client
+gcc -Wall -Wextra -Werror server.c libfta/libft.a -o server
