@@ -6,36 +6,56 @@
 /*   By: stigkas <stigkas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/18 10:15:01 by stigkas           #+#    #+#             */
-/*   Updated: 2024/01/10 15:33:40 by stigkas          ###   ########.fr       */
+/*   Updated: 2024/01/12 16:10:37 by stigkas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "includes/minitalk.h"
 
-void	send_char(int server_pid, char character)
+int	ft_send_str_len(int server_pid, char *str)
 {
-	int	i;
-	int	bit;
+	int		i;
+	size_t	str_len;
 
 	i = 0;
-	while (i < 8)
+	str_len = ft_strlen(str);
+	if (str_len > MAX_LEN)
 	{
-		bit = (0x01 << i) & character;
-		if (bit != 0)
-			kill(server_pid, SIGUSR1);
-		else
-			kill(server_pid, SIGUSR2);
-		usleep(100);
+		ft_printf("The message is too long");
+		return (0);
+	}
+	while (i < 32)
+	{
+		kill(server_pid, SIGUSR1 + (1 & (str_len >> i)));
+		usleep(50);
 		i++;
+	}
+	return (1);
+}
+
+void	ft_send_str(int server_pid, char	*str)
+{
+	int	i;
+	int	c;
+
+	i = 0;
+	while (*str)
+	{
+		c = *str;
+		while (i < 8)
+		{
+			kill(server_pid, SIGUSR1 + (1 & (c >> i)));
+			usleep(50);
+			i++;
+		}
+		str++;
 	}
 }
 
 int	main(int argc, char **av)
 {
 	int		server_pid;
-	int		i;
 
-	i = 0;
 	if (argc == 3)
 	{
 		server_pid = ft_atoi(av[1]);
@@ -45,9 +65,9 @@ int	main(int argc, char **av)
 			ft_putstr_fd(av[1], 2);
 			exit(1);
 		}
-		while (av[2][i])
-			send_char(server_pid, av[2][i++]);
-		send_char(server_pid, '\0');
+		if (!ft_send_str_len(server_pid, av[2]))
+			exit(0);
+		ft_send_str(server_pid, av[2]);
 	}
 	else
 	{

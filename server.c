@@ -6,36 +6,86 @@
 /*   By: stigkas <stigkas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/18 10:15:05 by stigkas           #+#    #+#             */
-/*   Updated: 2024/01/11 14:31:48 by stigkas          ###   ########.fr       */
+/*   Updated: 2024/01/12 16:22:36 by stigkas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "includes/minitalk.h"
 
-void	handle_signal(int sig)
+void	get_the_len(int sig, size_t *m_len)
 {
-	static int	bit_index;
-	static int	current_char;
+	static size_t	len = 0;
+	static size_t	multiplier = 1;
 
-	if (sig == SIGUSR1)
-		current_char |= (0x01 << bit_index);
-	bit_index++;
-	if (bit_index == 8)
+	len += multiplier * (sig - 30);
+	multiplier *= 2;
+	if (multiplier > INT_MAX)
 	{
-		ft_printf("%c", current_char);
-		bit_index = 0;
-		current_char = 0;
+		*m_len = len;
+		len = 0;
+		multiplier = 1;
 	}
+}
+
+int	ft_get_message(char *msg, int sig, int m_len)
+{
+	static int	c = 0;
+	static int	i = 0;
+	static int	multiplier = 1;
+
+	if (multiplier <= 128)
+	{
+		c += multiplier * (sig - 30);
+		multiplier *= 2;
+	}
+	if (multiplier == 256)
+	{
+		msg[i] = c;
+		i++;
+		c = 0;
+		multiplier = 1;
+	}
+	if (i == m_len)
+	{
+		i = 0;
+		return (1);
+	}
+	else
+		return (0);
+}
+
+void	ft_get_string(int sig, siginfo_t *info, void *context)
+{
+	static char		*msg;
+	static size_t	msg_len;
+
+	if (msg_len)
+	{
+		if (msg == NULL)
+			msg = malloc(msg_len);
+		if (ft_get_message(msg, sig, msg_len))
+		{
+			write(1, msg, msg_len);
+			write(1, "\n", 1);
+			free(msg);
+			msg = NULL;
+			msg_len = 0;
+		}
+	}
+	else
+		get_the_len(sig, &msg_len);
 }
 
 int	main(void)
 {
+	struct sigaction	sa;
+
+	sa.sa_flags = SA_SIGINFO;
+	sa.sa_sigaction = &ft_get_string;
 	ft_printf("Server PID: %d\n", getpid());
+	sigaction(SIGUSR1, &sa, NULL);
+	sigaction(SIGUSR2, &sa, NULL);
 	while (1)
-	{
-		signal(SIGUSR1, handle_signal);
-		signal(SIGUSR2, handle_signal);
 		pause();
-	}
 	return (0);
 }
