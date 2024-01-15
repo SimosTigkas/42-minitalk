@@ -6,11 +6,12 @@
 /*   By: stigkas <stigkas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 09:16:23 by stigkas           #+#    #+#             */
-/*   Updated: 2023/12/18 12:38:06 by stigkas          ###   ########.fr       */
+/*   Updated: 2024/01/15 15:38:31 by stigkas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libft.h"
+
 
 int	ft_putnbr_fd(int n, int fd)
 {

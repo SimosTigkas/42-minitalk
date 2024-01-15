@@ -6,11 +6,12 @@
 /*   By: stigkas <stigkas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 16:49:10 by stigkas           #+#    #+#             */
-/*   Updated: 2023/11/20 16:34:36 by stigkas          ###   ########.fr       */
+/*   Updated: 2024/01/15 15:38:16 by stigkas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libft.h"
+
 
 void	*ft_memset(void *b, int c, size_t len)
 {

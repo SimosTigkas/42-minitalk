@@ -6,11 +6,12 @@
 /*   By: stigkas <stigkas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 09:18:05 by stigkas           #+#    #+#             */
-/*   Updated: 2023/11/20 16:33:11 by stigkas          ###   ########.fr       */
+/*   Updated: 2024/01/15 15:37:45 by stigkas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libft.h"
+
 
 int	ft_isdigit(int c)
 {

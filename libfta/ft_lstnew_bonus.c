@@ -6,11 +6,12 @@
 /*   By: stigkas <stigkas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 07:47:36 by stigkas           #+#    #+#             */
-/*   Updated: 2023/11/20 16:34:05 by stigkas          ###   ########.fr       */
+/*   Updated: 2024/01/15 15:38:04 by stigkas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libft.h"
+
 
 t_list	*ft_lstnew(void *content)
 {

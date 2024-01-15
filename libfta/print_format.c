@@ -6,11 +6,12 @@
 /*   By: stigkas <stigkas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 09:37:16 by stigkas           #+#    #+#             */
-/*   Updated: 2024/01/08 12:46:19 by stigkas          ###   ########.fr       */
+/*   Updated: 2024/01/15 15:39:28 by stigkas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libft.h"
+
 
 int	print_ptr(unsigned long ptr)
 {

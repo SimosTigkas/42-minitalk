@@ -6,11 +6,12 @@
 /*   By: stigkas <stigkas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 13:32:48 by stigkas           #+#    #+#             */
-/*   Updated: 2023/11/20 16:35:43 by stigkas          ###   ########.fr       */
+/*   Updated: 2024/01/15 15:38:58 by stigkas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libft.h"
+
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {

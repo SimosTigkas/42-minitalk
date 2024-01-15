@@ -6,11 +6,12 @@
 /*   By: stigkas <stigkas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 08:27:56 by stigkas           #+#    #+#             */
-/*   Updated: 2024/01/08 12:46:23 by stigkas          ###   ########.fr       */
+/*   Updated: 2024/01/15 15:39:26 by stigkas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libft.h"
+
 
 int	print_u(unsigned int n)
 {

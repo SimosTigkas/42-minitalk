@@ -6,11 +6,12 @@
 /*   By: stigkas <stigkas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 16:54:54 by stigkas           #+#    #+#             */
-/*   Updated: 2023/11/20 16:36:20 by stigkas          ###   ########.fr       */
+/*   Updated: 2024/01/15 15:39:18 by stigkas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libft.h"
+
 
 static int	ft_islower(int c)
 {

@@ -6,11 +6,12 @@
 /*   By: stigkas <stigkas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 16:48:52 by stigkas           #+#    #+#             */
-/*   Updated: 2023/11/20 16:34:22 by stigkas          ###   ########.fr       */
+/*   Updated: 2024/01/15 15:38:09 by stigkas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libft.h"
+
 
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
