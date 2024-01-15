@@ -6,12 +6,11 @@
 /*   By: stigkas <stigkas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/18 10:15:05 by stigkas           #+#    #+#             */
-/*   Updated: 2024/01/15 15:32:49 by stigkas          ###   ########.fr       */
+/*   Updated: 2024/01/15 15:35:58 by stigkas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "includes/minitalk.h"
-
 
 void	get_the_len(int sig, size_t *m_len)
 {

@@ -12,9 +12,9 @@ OBJ = $(FUNC:.c=.o)
 
 CC = gcc
 
-SRVR_NAME = server
+SERVER_NAME = server
 
-CLNT_NAME = client
+CLIENT_NAME = client
 
 CFLAGS = -Wall -Wextra -Werror
 
@@ -27,16 +27,16 @@ $(LIBFT):
 $(OBJ): %.o: %.c
 	$(CC) $(CFLAGS) -c $? -o $@
 
-$(SRVR_NAME): $(LIBFT)
-	$(CC) $(CFLAGS) -I $(INC) server.o $(LIBFT) -o $(SRVR_NAME)
+$(SERVER_NAME): $(LIBFT)
+	$(CC) $(CFLAGS) -I $(INC) server.o $(LIBFT) -o $(SERVER_NAME)
 
-$(CLNT_NAME): $(LIBFT)
-	$(CC) $(CFLAGS) -I $(INC) client.o $(LIBFT) -o $(CLNT_NAME)
+$(CLIENT_NAME): $(LIBFT)
+	$(CC) $(CFLAGS) -I $(INC) client.o $(LIBFT) -o $(CLIENT_NAME)
 
-all: $(NAME) $(SRVR_NAME) $(CLNT_NAME)
+all: $(NAME) $(SERVER_NAME) $(CLIENT_NAME)
 
 clean:
-	rm -f $(OBJ) $(SRVR_NAME) $(CLNT_NAME)
+	rm -f $(OBJ) $(SERVER_NAME) $(CLIENT_NAME)
 	cd libfta && $(MAKE) clean
 
 fclean:	clean
