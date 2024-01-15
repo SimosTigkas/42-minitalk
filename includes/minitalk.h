@@ -6,7 +6,7 @@
 /*   By: stigkas <stigkas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/18 10:32:04 by stigkas           #+#    #+#             */
-/*   Updated: 2024/01/15 14:46:18 by stigkas          ###   ########.fr       */
+/*   Updated: 2024/01/15 15:32:53 by stigkas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,6 @@ int		ft_send_str_len(int server_pid, char *str);
 void	ft_send_str(int server_pid, char	*str);
 void	ft_get_the_len(int sig, size_t *m_len);
 int		ft_get_message(char *msg, int sig, int m_len);
+
 
 #endif
