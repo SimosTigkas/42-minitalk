@@ -6,7 +6,7 @@
 /*   By: stigkas <stigkas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/18 10:15:01 by stigkas           #+#    #+#             */
-/*   Updated: 2024/01/15 12:24:02 by stigkas          ###   ########.fr       */
+/*   Updated: 2024/01/15 15:16:53 by stigkas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	ft_send_str_len(int server_pid, char *str)
 
 	i = 0;
 	str_len = ft_strlen(str);
-	if (str_len > MAX_LEN)
+	if (str_len >= MAX_LEN)
 	{
 		ft_printf("The message is too long");
 		return (0);
@@ -27,7 +27,7 @@ int	ft_send_str_len(int server_pid, char *str)
 	while (i < 32)
 	{
 		kill(server_pid, SIGUSR1 + (1 & (str_len >> i)));
-		usleep(50);
+		usleep(60);
 		i++;
 	}
 	return (1);
@@ -45,7 +45,7 @@ void	ft_send_str(int server_pid, char	*str)
 		while (i < 8)
 		{
 			kill(server_pid, SIGUSR1 + (1 & (c >> i)));
-			usleep(50);
+			usleep(75);
 			i++;
 		}
 		str++;
