@@ -22,17 +22,15 @@ $(NAME): $(OBJ)
 	ar crs $(NAME) $(OBJ)
 
 $(LIBFT):
-	cd libfta && $(MAKE)
+	cd libfta && $(MAKE) && $(MAKE) bonus
 
 $(OBJ): %.o: %.c
 	$(CC) $(CFLAGS) -c $? -o $@
 
 $(SERVER_NAME): $(LIBFT)
-	@echo "Compiling the server"
 	$(CC) $(CFLAGS) -I $(INC) server.o $(LIBFT) -o $(SERVER_NAME)
 
 $(CLIENT_NAME): $(LIBFT)
-	@echo "Compiling the client"
 	$(CC) $(CFLAGS) -I $(INC) client.o $(LIBFT) -o $(CLIENT_NAME)
 
 all: $(NAME) $(SERVER_NAME) $(CLIENT_NAME)

@@ -6,7 +6,7 @@
 /*   By: stigkas <stigkas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/18 10:15:01 by stigkas           #+#    #+#             */
-/*   Updated: 2024/01/12 16:10:37 by stigkas          ###   ########.fr       */
+/*   Updated: 2024/01/15 12:24:02 by stigkas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,10 +38,10 @@ void	ft_send_str(int server_pid, char	*str)
 	int	i;
 	int	c;
 
-	i = 0;
 	while (*str)
 	{
 		c = *str;
+		i = 0;
 		while (i < 8)
 		{
 			kill(server_pid, SIGUSR1 + (1 & (c >> i)));

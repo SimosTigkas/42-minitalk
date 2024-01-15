@@ -6,7 +6,7 @@
 /*   By: stigkas <stigkas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/18 10:15:05 by stigkas           #+#    #+#             */
-/*   Updated: 2024/01/12 16:22:36 by stigkas          ###   ########.fr       */
+/*   Updated: 2024/01/15 12:39:17 by stigkas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,11 +33,8 @@ int	ft_get_message(char *msg, int sig, int m_len)
 	static int	i = 0;
 	static int	multiplier = 1;
 
-	if (multiplier <= 128)
-	{
-		c += multiplier * (sig - 30);
-		multiplier *= 2;
-	}
+	c += multiplier * (sig - 30);
+	multiplier *= 2;
 	if (multiplier == 256)
 	{
 		msg[i] = c;
@@ -48,6 +45,7 @@ int	ft_get_message(char *msg, int sig, int m_len)
 	if (i == m_len)
 	{
 		i = 0;
+		m_len = 0;
 		return (1);
 	}
 	else
@@ -59,10 +57,16 @@ void	ft_get_string(int sig, siginfo_t *info, void *context)
 	static char		*msg;
 	static size_t	msg_len;
 
+	(void)context;
+	(void)info;
 	if (msg_len)
 	{
 		if (msg == NULL)
-			msg = malloc(msg_len);
+		{
+			msg = malloc(msg_len + 1);
+			if (msg == NULL)
+				exit(1);
+		}
 		if (ft_get_message(msg, sig, msg_len))
 		{
 			write(1, msg, msg_len);
