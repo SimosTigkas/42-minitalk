@@ -6,12 +6,11 @@
 /*   By: stigkas <stigkas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 17:46:48 by stigkas           #+#    #+#             */
-/*   Updated: 2024/01/15 15:39:08 by stigkas          ###   ########.fr       */
+/*   Updated: 2024/01/15 15:40:59 by stigkas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libft.h"
-
 
 static char	*create_final(char const *s, int start, int len);
 

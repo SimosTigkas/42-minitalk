@@ -6,12 +6,11 @@
 /*   By: stigkas <stigkas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 16:53:36 by stigkas           #+#    #+#             */
-/*   Updated: 2024/01/15 15:38:55 by stigkas          ###   ########.fr       */
+/*   Updated: 2024/01/15 15:41:17 by stigkas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libft.h"
-
 
 size_t	ft_strlen(const char *s)
 {

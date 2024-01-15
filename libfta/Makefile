@@ -39,7 +39,6 @@ FUNC = \
 	print_format.c \
 	ft_printf.c
 
-
 BONUS = \
 	ft_lstnew_bonus.c \
 	ft_lstsize_bonus.c \

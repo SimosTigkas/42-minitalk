@@ -6,12 +6,11 @@
 /*   By: stigkas <stigkas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 08:33:59 by stigkas           #+#    #+#             */
-/*   Updated: 2024/01/15 15:37:49 by stigkas          ###   ########.fr       */
+/*   Updated: 2024/01/15 15:42:07 by stigkas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libft.h"
-
 
 static void	ft_fill_res(int size, int offset, int n, char *res)
 {

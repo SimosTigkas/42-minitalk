@@ -6,12 +6,11 @@
 /*   By: stigkas <stigkas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 08:38:08 by stigkas           #+#    #+#             */
-/*   Updated: 2024/01/15 15:37:55 by stigkas          ###   ########.fr       */
+/*   Updated: 2024/01/15 15:42:04 by stigkas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libft.h"
-
 
 void	ft_lstclear(t_list **lst, void (*del)(void *))
 {

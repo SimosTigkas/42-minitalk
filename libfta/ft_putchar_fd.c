@@ -6,13 +6,11 @@
 /*   By: stigkas <stigkas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 07:56:41 by stigkas           #+#    #+#             */
-/*   Updated: 2024/01/15 15:38:26 by stigkas          ###   ########.fr       */
+/*   Updated: 2024/01/15 15:41:40 by stigkas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libft.h"
-
-
 
 int	ft_putchar_fd(char c, int fd)
 {

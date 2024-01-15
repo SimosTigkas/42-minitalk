@@ -6,12 +6,11 @@
 /*   By: stigkas <stigkas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/25 10:44:35 by stigkas           #+#    #+#             */
-/*   Updated: 2024/01/15 15:38:14 by stigkas          ###   ########.fr       */
+/*   Updated: 2024/01/15 15:41:48 by stigkas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libft.h"
-
 
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {

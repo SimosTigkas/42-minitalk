@@ -6,12 +6,11 @@
 /*   By: stigkas <stigkas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 16:41:15 by stigkas           #+#    #+#             */
-/*   Updated: 2024/01/15 15:37:42 by stigkas          ###   ########.fr       */
+/*   Updated: 2024/01/15 15:42:12 by stigkas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libft.h"
-
 
 int	ft_isalpha(int c)
 {

@@ -6,12 +6,11 @@
 /*   By: stigkas <stigkas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 16:54:05 by stigkas           #+#    #+#             */
-/*   Updated: 2024/01/15 15:39:02 by stigkas          ###   ########.fr       */
+/*   Updated: 2024/01/15 15:41:07 by stigkas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libft.h"
-
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {

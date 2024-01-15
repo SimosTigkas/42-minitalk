@@ -6,12 +6,11 @@
 /*   By: stigkas <stigkas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 16:52:54 by stigkas           #+#    #+#             */
-/*   Updated: 2024/01/15 15:38:40 by stigkas          ###   ########.fr       */
+/*   Updated: 2024/01/15 15:41:29 by stigkas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libft.h"
-
 
 char	*ft_strdup(const char *src)
 {
