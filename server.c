@@ -6,13 +6,13 @@
 /*   By: stigkas <stigkas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/18 10:15:05 by stigkas           #+#    #+#             */
-/*   Updated: 2024/01/15 15:35:58 by stigkas          ###   ########.fr       */
+/*   Updated: 2024/01/17 16:00:27 by stigkas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "includes/minitalk.h"
 
-void	get_the_len(int sig, size_t *m_len)
+void	ft_get_the_len(int sig, size_t *m_len)
 {
 	static size_t	len = 0;
 	static size_t	multiplier = 1;
@@ -77,7 +77,7 @@ void	ft_get_string(int sig, siginfo_t *info, void *context)
 		}
 	}
 	else
-		get_the_len(sig, &msg_len);
+		ft_get_the_len(sig, &msg_len);
 }
 
 int	main(void)
