@@ -6,7 +6,7 @@
 /*   By: stigkas <stigkas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/18 10:32:04 by stigkas           #+#    #+#             */
-/*   Updated: 2024/01/17 09:39:22 by stigkas          ###   ########.fr       */
+/*   Updated: 2024/01/19 16:03:23 by stigkas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,6 @@
 # include <signal.h>
 # include <stdlib.h>
 # include "libft.h"
-# include <string.h>
-# include <fcntl.h>
 # define MAX_LEN 4294967295
 # define INT_MAX 2147483648
 
