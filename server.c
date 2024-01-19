@@ -6,10 +6,11 @@
 /*   By: stigkas <stigkas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/18 10:15:05 by stigkas           #+#    #+#             */
-/*   Updated: 2024/01/17 16:00:27 by stigkas          ###   ########.fr       */
+/*   Updated: 2024/01/19 16:13:16 by stigkas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+//Receives a message from the client!!
 #include "includes/minitalk.h"
 
 void	ft_get_the_len(int sig, size_t *m_len)
